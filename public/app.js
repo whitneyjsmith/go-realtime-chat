@@ -1,3 +1,5 @@
+// Start by creating a new Vue object. We mount it to a div with the id of "#app".
+// This allows anything within that div to share scope with our Vue instance.
 new Vue({
     el: '#app',
 
@@ -13,6 +15,7 @@ new Vue({
     created: function() {
         var self = this;
         this.ws = new WebSocket('ws://' + window.location.host + '/ws');
+        // addEventListener() takes a function that will be used to handle incoming messages
         this.ws.addEventListener('message', function(e) {
             var msg = JSON.parse(e.data);
             self.chatContent += '<div class="chip">'
@@ -26,6 +29,7 @@ new Vue({
         });
     },
 
+    // define any functions we would like to use in our VueJS app
     methods: {
         send: function () {
             if (this.newMsg != '') {
@@ -40,6 +44,7 @@ new Vue({
             }
         },
 
+        // make sure the user enters an email and username before they can send any messages
         join: function () {
             if (!this.email) {
                 Materialize.toast('You must enter an email', 2000);
