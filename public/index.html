@@ -4,21 +4,23 @@
     <!-- Fonts and stylesheets to make things pretty-->
     <meta charset="UTF-8">
     <title>Simple Chat</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link href='https://fonts.googleapis.com/css?family=Geostar+Fill' rel='stylesheet' type='text/css'>
 </head>
 
 <!-- Interface -->
 <body>
-<header>
+<header class="w3-container w3-blue w3-center">
     <nav>
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo right">Simple Chat</a>
+            <h1 style="font-family: 'Geostar Fill', cursive; font-size: 350%">The Nerd Herd</h1>
         </div>
     </nav>
 </header>
+
 <main id="app">
     <div class="row">
         <div class="col s12">
@@ -28,17 +30,18 @@
             </div>
         </div>
     </div>
+
     <div class="row" v-if="joined">
         <div class="input-field col s8">
             <input type="text" v-model="newMsg" @keyup.enter="send">
         </div>
         <div class="input-field col s4">
             <button class="waves-effect waves-light btn" @click="send">
-                <i class="material-icons right">chat</i>
                 Send
             </button>
         </div>
     </div>
+
     <div class="row" v-if="!joined">
         <div class="input-field col s8">
             <input type="email" v-model.trim="email" placeholder="Email">
@@ -48,7 +51,6 @@
         </div>
         <div class="input-field col s4">
             <button class="waves-effect waves-light btn" @click="join()">
-                <i class="material-icons right">done</i>
                 Join
             </button>
         </div>
