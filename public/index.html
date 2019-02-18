@@ -3,8 +3,9 @@
 <head>
     <!-- Fonts and stylesheets to make things pretty-->
     <meta charset="UTF-8">
-    <title>Simple Chat</title>
+    <title>Chat Room</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
@@ -13,7 +14,7 @@
 
 <!-- Interface -->
 <body>
-<header class="w3-container w3-blue w3-center">
+<header class="w3-container w3-white w3-center">
     <nav>
         <div class="nav-wrapper">
             <h1 style="font-family: 'Geostar Fill', cursive; font-size: 350%">The Nerd Herd</h1>
@@ -51,7 +52,7 @@
         </div>
         <div class="input-field col s4">
             <button class="waves-effect waves-light btn" @click="join()">
-                Join
+                Click to Join
             </button>
         </div>
     </div>
@@ -59,7 +60,7 @@
 <footer class="page-footer">
 </footer>
 
-<!-- importing all the required JavaScript libraries to inclue Vue, EmojiOne, jQuery and Materialize.
+<!-- importing all the required JavaScript libraries to include Vue, EmojiOne, jQuery and Materialize.
      We also need an MD5 library to grab URLs for avatars from Gravatar. -->
 <script src="https://unpkg.com/vue@2.1.3/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
