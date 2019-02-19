@@ -3,6 +3,7 @@
 new Vue({
     el: '#app',
 
+    // variables
     data: {
         ws: null, // Our websocket
         newMsg: '', // Holds new messages to be sent to the server
@@ -12,6 +13,7 @@ new Vue({
         joined: false // True if email and username have been filled in
     },
 
+    // created: a function you define that handles anything you want to as soon as the Vue instance has been created
     created: function() {
         var self = this;
         this.ws = new WebSocket('ws://' + window.location.host + '/ws');
@@ -29,7 +31,7 @@ new Vue({
         });
     },
 
-    // define any functions we would like to use in our VueJS app
+    // methods: this is where we define any functions we would like to use in our VueJS app
     methods: {
         send: function () {
             if (this.newMsg != '') {
@@ -59,6 +61,7 @@ new Vue({
             this.joined = true;
         },
 
+        // helper function for grabbing the avatar URL from Gravatar
         gravatarURL: function(email) {
             return 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(email);
         }
